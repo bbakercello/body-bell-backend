@@ -1,4 +1,8 @@
-module.exports = [{
+const db = require('./Artist')
+
+function seedArtists(){
+    db.insertMany(
+[{
     spotifyID: '0CdShur7VAAWDXyWYYFBHj',
     name: 'Popsicle Hunters',
     bio: 'Chronicling of the bond-strengthening power of popsicles.',
@@ -14,4 +18,6 @@ module.exports = [{
     bio: 'New England experimental artist.',
     instagram: 'https://www.instagram.com/ben_bakermusic/'
 }
-]
+])}
+
+module.exports = seedArtists

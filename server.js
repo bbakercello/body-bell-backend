@@ -9,9 +9,11 @@ const PORT = process.env.PORT || 4000
 
 //CONTROLLER IMPORTS
 const db = require('./models');
+const seedArtists = require('./models/seed_artists.js');
 // const Album = require('./models/Album')
 
-
+//SEEDING DATA to MONGO
+seedArtists();
 
 app.get('/', function (req,res) {
     res.send('<h1>Welcome to the Body Bell Database</h1>'
