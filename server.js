@@ -8,7 +8,8 @@ const MongoStore = require('connect-mongo')
 const PORT = process.env.PORT || 4000
 
 //CONTROLLER IMPORTS
-const db = require('./models/Artist');
+const db = require('./models');
+// const Album = require('./models/Album')
 
 
 
