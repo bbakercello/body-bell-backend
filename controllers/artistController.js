@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const { Artist } = require('../models/Artist.js')
+const Artist  = require('../models/Artist.js')
 
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }))
