@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 })
 
 
-// get specific post
+// get specific Message
 router.get('/:id', async (req, res) => {
   try{
     res.json(await db.Message.findById(req.params.id));
@@ -27,5 +27,30 @@ router.get('/:id', async (req, res) => {
     res.status(400).json(err)
   }
 })
+
+// update message
+router.put('/:id', async (req, res) => {
+  try {
+    res.json(await db.Message.findByIdAndUpdate(
+      req.params.id, 
+      req.body,
+      {new: true}
+      ));
+  }
+  catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+// delete message
+router.delete('/:id', async (req, res, next) => {
+  try {
+    res.json(await db.Message.findByIdAndUpdate(req.params.id));
+  }
+  catch (err) {
+    res.status(400).json(err)
+  }
+})
+
 
 module.exports = router;

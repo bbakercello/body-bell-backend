@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 4000
 //CONTROLLER IMPORTS
 const artistController = require('./controllers/artistController')
 const albumController = require('./controllers/albumController')
+const messageController = require('./controllers/message.Controller')
 
 //DATABASE VARS
 const db = require('./models');
@@ -34,7 +35,7 @@ app.use(morgan('dev'));
 //CONTROLLER MIDDLEWARE
 app.use('/artists',artistController);
 app.use('/albums',albumController);
-
+app.use('/messages',messageController)
 
 //SEEDING DATA to MONGO
 // seedArtists();
