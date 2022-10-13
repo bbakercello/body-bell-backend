@@ -18,7 +18,7 @@ const messageController = require('./controllers/message.Controller')
 const db = require('./models');
 const seedArtists = require('./models/seed_artists.js');
 const seedAlbums = require('./models/seed_albums.js')
-
+const seedMessages = require('./models/seed_messages.js')
 
 app.get('/', function (req,res) {
     res.send('<h1>Welcome to the Body Bell Database</h1>'
@@ -40,6 +40,7 @@ app.use('/messages',messageController)
 //SEEDING DATA to MONGO
 // seedArtists();
 // seedAlbums();
+// seedMessages();
 
 
 
