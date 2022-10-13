@@ -45,7 +45,7 @@ router.put('/:id', async (req, res) => {
 // delete message
 router.delete('/:id', async (req, res, next) => {
   try {
-    res.json(await Message.findByIdAndUpdate(req.params.id));
+    res.json(await Message.findByIdAndDelete(req.params.id));
   }
   catch (err) {
     res.status(400).json(err)
