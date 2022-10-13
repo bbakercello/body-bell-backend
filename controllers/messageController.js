@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 // get specific Message
 router.get('/:id', async (req, res) => {
   try{
-    res.json(await db.Message.findById(req.params.id));
+    res.json(await Message.findById(req.params.id));
   }
   catch (err) {
     res.status(400).json(err)
@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 // update message
 router.put('/:id', async (req, res) => {
   try {
-    res.json(await db.Message.findByIdAndUpdate(
+    res.json(await Message.findByIdAndUpdate(
       req.params.id, 
       req.body,
       {new: true}
@@ -45,7 +45,7 @@ router.put('/:id', async (req, res) => {
 // delete message
 router.delete('/:id', async (req, res, next) => {
   try {
-    res.json(await db.Message.findByIdAndUpdate(req.params.id));
+    res.json(await Message.findByIdAndUpdate(req.params.id));
   }
   catch (err) {
     res.status(400).json(err)
