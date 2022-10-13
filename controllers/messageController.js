@@ -55,7 +55,7 @@ router.delete('/:id', async (req, res, next) => {
 //post message
 router.post('/',async (req,res,next)=>{
   try{
-      const message = await db.Message.create(req.body)
+      const message = await Message.create(req.body)
       res.redirect(`/`)
   }catch(error){
       req.err = error
