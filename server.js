@@ -40,7 +40,7 @@ app.use('/messages',messageController)
 //SEEDING DATA to MONGO
 // seedArtists();
 // seedAlbums();
-// seedMessages();
+seedMessages();
 
 
 
