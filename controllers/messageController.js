@@ -45,7 +45,7 @@ router.put('/:id', async (req, res) => {
 // delete message
 router.delete('/:id', async (req, res, next) => {
   try {
-    res.json(await Message.findByIdAndDelete(req.params.id));
+    res.json(await Message.findByIdDelete(req.params.id));
   }
   catch (err) {
     res.status(400).json(err)
@@ -56,6 +56,7 @@ router.delete('/:id', async (req, res, next) => {
 router.post('/',async (req,res,next)=>{
   try{
       const message = await Message.create(req.body)
+      res.redirect(`/`)
   }catch(error){
       req.err = error
       console.log(error)
